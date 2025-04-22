@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 147, 51, 234;
+  --primary-dark: 126, 34, 206;
+  --primary-light: 168, 85, 247;
+  --background: 255, 255, 255;
+  --foreground: 17, 17, 17;
+  --dark: 17, 17, 17;
+  --dark-secondary: 31, 31, 31;
+  --dark-lighter: 45, 45, 45;
+}
+
+.dark {
+  --background: 17, 17, 17;
+  --foreground: 255, 255, 255;
+}
+
+@layer base {
+  * {
+    @apply transition-colors duration-200;
+  }
+  
+  body {
+    @apply bg-white text-gray-900 dark:bg-dark dark:text-white;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl largemobile:px-6 laptop:px-8;
+  }
+  
+  .btn {
+    @apply px-5 py-2.5 font-medium rounded-full shadow-sm transition-all duration-300 
+    focus:outline-none focus:ring-2 focus:ring-offset-2 
+    transform hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  .btn-primary {
+    @apply text-white bg-primary hover:bg-primary-dark focus:ring-primary
+    shadow-md hover:shadow-lg border border-primary hover:border-primary-dark;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+  
+  .translate-z-1 {
+    transform: translateZ(1px);
+  }
+  
+  .profile-image-container {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+} 
